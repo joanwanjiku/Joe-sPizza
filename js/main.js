@@ -15,7 +15,7 @@ Order.prototype.determinePrice = function(){
     	this.price += pizzaToppingsPrice(topping);
     });
     return this.price
-}
+};
 Order.prototype.determinePricePlusDelivery = function(){
     this.price += pizzaSizePrice(this.pizzaSize);
     this.price += pizzaCrustprice(this.pizzaCrust);
@@ -24,7 +24,7 @@ Order.prototype.determinePricePlusDelivery = function(){
     });
     this.price += 100
     return this.price
-}
+};
 
 
 function pizzaSizePrice(size){
