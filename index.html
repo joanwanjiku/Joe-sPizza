@@ -45,7 +45,7 @@
                             <small class="sup" style="font-size: .75rem; margin-left: .5em;">Big:-Shs.500, Medium:-Shs.350, Small:-Shs.250</small>
                             <select class="form-control form-control-sm" id="pizza">
                                 <option selected>-Select--</option>
-                                <option>Big;</option>
+                                <option>Big</option>
                                 <option>Medium</option>
                                 <option>Small</option>
                               </select>
@@ -142,14 +142,24 @@
                     </fieldset>   
                     <div class="form-group row">
                         <div class="col-sm-8 offset-sm-4">
-                            <button type="submit" class="btn px-4" id = "orderBtn">Order</button>
+                            <button type="submit" class="btn px-4" id = "orderBtn">Add</button>
                         </div>
                     </div>                 
                   </form>
                </div>
                <div class="col-sm-4 sectionTwo">
+                   <div class="row">
+                       <div class="col">
+                            <h2>Pizzas <span class="badge badge-success" id="orderNum">0</span> </h2>
+                            <ol id="PizzaList">                              
+                                
+                            </ol> 
+                       </div>
+                   </div>                  
                     <h2>Orders <span class="badge badge-success" id="orderNum">0</span> </h2>
-                    <ol id="orderList"></ol>
+                    <ol id="orderList">
+                       
+                    </ol>
                </div>
            </div>
            <footer></footer>
