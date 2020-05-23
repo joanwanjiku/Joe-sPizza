@@ -18,10 +18,25 @@ p,
 .form-check-label,
 option{
     font-size: .875rem;
+    margin-left: em;
 }
 img{
     width: 100%;
 
+}
+.sup,
+sup{
+    font-style: italic;
+    font-weight: bold;
+    font-size: smaller;
+    /* vertical-align: super; */
+    color: #f8690b;
+}
+.btn{
+    background: #bc622a;
+}
+.badge{
+    background: #6f482d;
 }
 
 /* Layout */
@@ -130,3 +145,4 @@ nav a:focus{
     font-size: .75rem;
     background: rgba(253, 54, 54, 0.286); 
 }
+
