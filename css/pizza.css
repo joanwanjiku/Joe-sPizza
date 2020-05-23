@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+body{
+   font-family: 'Open Sans', sans-serif;
+}
+/* Typography */
+h1{
+    font-size: 1.25rem;
+}
+h2{
+    font-size: 1rem;
+}
+h3, 
+.col-form-label{
+    font-size: .875rem;
+    font-weight: 600;
+}
+p,
+.form-check-label,
+option{
+    font-size: .875rem;
+}
+img{
+    width: 100%;
+
+}
+
+/* Layout */
+header{
+    background: url('../images/pizzaheader.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 40vh;
+}
+.site-nav{
+    margin: 0 -15px;
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.site-title{
+    margin-left: 2em;
+}
+.site-title h1 {
+    font-weight: 600;
+    margin: 0;
+}
+.site-title p {
+    margin: 0;
+    font-style: italic;
+    font-weight: 400;
+}
+/* navigation */
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: center;
+}
+nav li{
+    margin-right: 2em;
+
+}
+nav a{
+    text-decoration: none;
+    color: black;
+    padding: .25em 0;
+    font-weight: 600;
+}
+nav a:hover,
+nav a:focus{
+    color:#3a3127;
+    text-decoration: none;
+
+}
+.current{
+    border-bottom: 1px solid white;    
+}
+.current:hover{
+    color: #3a3127;
+}
+
+@media (min-width: 650px) {
+    .site-nav{        
+        flex-direction: row;
+    }
+    nav ul{
+       flex-direction: row;
+    }
+    nav a{
+        text-decoration: none;
+        color: white;
+        padding: .25em 0;
+        font-weight: 600;
+    }
+}
+
+.section{
+    width: 80%;
+    margin: 0 auto;
+    background-color: #f3e4ca;
+
+}
+.sectionOne{
+    margin: .5em;
+
+}
+.sectionTwo{
+    margin: .5em;
+
+}
+.sectionTwo h2{
+    text-align: center;
+    font-weight: bold;
+}
+.section h3{
+    text-align: center;
+    margin: 0;
+}
