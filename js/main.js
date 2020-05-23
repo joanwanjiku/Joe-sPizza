@@ -31,7 +31,7 @@ function pizzaSizePrice(size){
     if (size == 'Big'){
   	    return 500;
     } else if(size == 'Medium'){
-  	    return 300;
+  	    return 350;
     } else{
   	    return 250;
     }
@@ -96,7 +96,6 @@ $(document).ready(function(){
         if(inputValue == 'true') {
             $('#locationDiv').show();           
             $('#location').focusout(function() {
-                 console.log($(this).val());
                 if($('#location').val() === ''){
                     $('#location').addClass('is-invalid');            
                     $('.lctError').show();
@@ -126,13 +125,26 @@ $(document).ready(function(){
         });
 
         var newOrder = new Order(name, pizza, selectedCrust, selectedToppings, deliveryOption)
-        console.log(newOrder)
-        if(newOrder[deliveryOption] == true){
-            console.log(newOrder.determinePricePlusDelivery());
-        }else {
-            newOrder.determinePrice();
+        orders.push(newOrder)
+        orders.forEach((order) => {
+            console.log(order)
+            $('#PizzaList').append(` <li>
+            <h5>${order.name}</h5>
+                    <p class="col-sm-10 m-0" >Size: <span style="font-weight:bold;">${order.pizzaSize}</span></p>
+                    <p class="col-sm-10 m-0" >Crust: <span style="font-weight:bold;">${order.pizzaCrust}</span></p>
+                    <p class="col-sm-10 m-0" >Toppings: <span style="font-weight:bold;">${order.pizzaToppings}</span></p>
+                    <p class="col-sm-10 m-0" >Price: <span style="font-weight:bold;">${order.determinePrice()}</span></p>                                        
+        </li>
+        `)
+        })
 
-        }
+
+        // if(newOrder[deliveryOption] == true){
+        //     console.log(newOrder.determinePricePlusDelivery());
+        // }else {
+        //     newOrder.determinePrice();
+
+        // }
         
     });
 });
