@@ -35,13 +35,13 @@
                     <div class="form-group row mb-1">
                       <label for="name" class="col-sm-2 col-form-label">Name</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" id="name" >
+                        <input type="text" class="form-control form-control-sm" id="name" >
                       </div>
                     </div>
                     <div class="form-group row mb-1">
                         <label for="" class="col-sm-2 col-form-label">Pizza Size</label>
                         <div class="col-sm-10">
-                            <select class="form-control" id="pizza">
+                            <select class="form-control form-control-sm" id="pizza">
                                 <option selected>-Select pizza size-</option>
                                 <option>Big</option>
                                 <option>Medium</option>
@@ -110,22 +110,28 @@
                     </fieldset>
                     <hr>
                     <h3 class="m-1">Delivery Options</h3>
-                    <fieldset class="form-group mb-1">
+                    <fieldset class="form-group mb-1" id="del">
                         <div class="row">
                             <legend for="" class="col-sm-2 col-form-label pt-0" >Delivery</legend>
                             <div class="col-sm-10">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="deliveryOptions" value="" id="defaultCheck1">
+                                    <input class="form-check-input" type="radio" name="deliveryOptions" value="true" id="defaultCheck1">                                    
                                     <label class="form-check-label" for="defaultCheck1">
                                       Deliver
-                                    </label>
-                                  </div>
+                                    </label>                                    
+                                </div>
+                                <div class="form-group row m-2" id="location">
+                                    <label for="name" class="col-sm-2 col-form-label">Address:-</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control form-control-sm" id="location" placeholder="1234, abc Street">
+                                    </div>
+                                </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="deliveryOptions" value="" id="defaultCheck2" >
+                                    <input class="form-check-input" type="radio" name="deliveryOptions" value="false" id="defaultCheck2" >
                                     <label class="form-check-label" for="defaultCheck2">
                                         Pick up
                                     </label>
-                                </div>
+                                </div>                               
                             </div> 
                         </div>                                              
                     </fieldset>   
