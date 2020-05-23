@@ -39,40 +39,40 @@
                         <small class="nameError" id="error">Name cannot be empty</small>
                       </div>
                     </div>
-                    <div class="form-group row mb-1">
+                    <div class="form-group row">
                         <label for="" class="col-sm-4 col-form-label">Pizza Size</label>
                         <div class="col-sm-8">
+                            <small class="sup" style="font-size: .75rem; margin-left: .5em;">Big:-Shs.500, Medium:-Shs.350, Small:-Shs.250</small>
                             <select class="form-control form-control-sm" id="pizza">
                                 <option selected>-Select--</option>
-                                <option>Big</option>
+                                <option>Big;</option>
                                 <option>Medium</option>
                                 <option>Small</option>
                               </select>
                               <small class="sizeError" id="error">Select a size</small>
-
                           </div>
                         </div>
                         
-                    <fieldset class="form-group mb-1">
+                    <fieldset class="form-group">
                         <div class="row">
                             <legend class="col-sm-4 col-form-label pt-0"> Crust</legend>
                             <div class="col-sm-8">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="crustType" value="stuffed" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                      Stuffed
+                                <div class="form-check my-1">
+                                    <input class="form-check-input" type="radio" name="crustType" value="stuffed">
+                                    <label class="form-check-label">
+                                      Stuffed <sup>Shs.25</sup>
                                     </label>
                                   </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="crustType" value="crusty" id="defaultCheck2" >
-                                    <label class="form-check-label" for="defaultCheck2">
-                                        Crusty
+                                <div class="form-check my-1">
+                                    <input class="form-check-input" type="radio" name="crustType" value="crusty" >
+                                    <label class="form-check-label">
+                                        Crusty <sup>Shs.35</sup>
                                     </label>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="crustType" value="glutenFree" id="defaultCheck2" >
-                                    <label class="form-check-label" for="defaultCheck2">
-                                        Gluten Free
+                                <div class="form-check my-1">
+                                    <input class="form-check-input" type="radio" name="crustType" value="glutenFree" >
+                                    <label class="form-check-label">
+                                        Gluten Free <sup>Shs.50</sup>
                                     </label>
                                 </div>   
                             </div>
@@ -83,28 +83,28 @@
                         <div class="row">
                             <legend for="" class="col-sm-4 col-form-label pt-0" >Toppings</legend>
                             <div class="col-sm-8">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="topping" value="blackOlives" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                      Black Olives
+                                <div class="form-check my-1">
+                                    <input class="form-check-input" type="checkbox" name="topping" value="blackOlives">
+                                    <label class="form-check-label">
+                                      Black Olives <sup>Shs.20</sup>
                                     </label>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="topping" value="pepperoni" id="defaultCheck2" >
-                                    <label class="form-check-label" for="defaultCheck2">
-                                      Pepperoni
+                                <div class="form-check my-1">
+                                    <input class="form-check-input" type="checkbox" name="topping" value="pepperoni" >
+                                    <label class="form-check-label">
+                                      Pepperoni <sup>Shs.15</sup>
                                     </label>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="topping" value="beef" id="defaultCheck2" >
-                                    <label class="form-check-label" for="defaultCheck2">
-                                      Minced beef
+                                <div class="form-check my-1">
+                                    <input class="form-check-input" type="checkbox" name="topping" value="beef" >
+                                    <label class="form-check-label">
+                                      Minced beef <sup>Shs.5</sup>
                                     </label>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="topping" value="mushrooms" id="defaultCheck2" >
-                                    <label class="form-check-label" for="defaultCheck2">
-                                      Mushrooms
+                                <div class="form-check my-1">
+                                    <input class="form-check-input" type="checkbox" name="topping" value="mushrooms" >
+                                    <label class="form-check-label">
+                                      Mushrooms <sup>Shs.0</sup>
                                     </label>
                                 </div>
                             </div>
@@ -117,10 +117,10 @@
                         <div class="row">
                             <legend for="" class="col-sm-4 col-form-label pt-0" >Delivery</legend>
                             <div class="col-sm-8">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="deliveryOptions" value="true" id="defaultCheck1">                                    
-                                    <label class="form-check-label" for="defaultCheck1">
-                                      Deliver
+                                <div class="form-check my-1">
+                                    <input class="form-check-input" type="radio" name="deliveryOptions" value="true">                                    
+                                    <label class="form-check-label">
+                                      Deliver <sup>Shs.100</sup>
                                     </label>                                    
                                 </div>
                                 <div class="form-group row m-2" id="locationDiv">
@@ -131,9 +131,9 @@
 
                                     </div>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="deliveryOptions" value="false" id="defaultCheck2" >
-                                    <label class="form-check-label" for="defaultCheck2">
+                                <div class="form-check my-1">
+                                    <input class="form-check-input" type="radio" name="deliveryOptions" value="false" >
+                                    <label class="form-check-label">
                                         Pick up
                                     </label>
                                 </div>                               
@@ -142,7 +142,7 @@
                     </fieldset>   
                     <div class="form-group row">
                         <div class="col-sm-8 offset-sm-4">
-                            <button type="submit" class="btn btn-success px-4" id = "orderBtn">Order</button>
+                            <button type="submit" class="btn px-4" id = "orderBtn">Order</button>
                         </div>
                     </div>                 
                   </form>
