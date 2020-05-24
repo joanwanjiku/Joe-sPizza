@@ -16,8 +16,6 @@ Order.prototype.determinePrice = function(){
     return this.price
 };
 
-
-
 function pizzaSizePrice(size){
     if (size == 'Big'){
   	    return 500;
@@ -29,6 +27,7 @@ function pizzaSizePrice(size){
   	    return 250;
     }
 };
+
 function pizzaCrustprice(crust){
 	if (crust == 'glutenFree'){
   	    return 50
@@ -58,8 +57,7 @@ function pizzaToppingsPrice(topping){
 
 $(document).ready(function(){
     // UI Logic
-    // Validations
-    // Name and Size validations
+    // Description and Size validations
     $('.sizeError').hide();
     $('.nameError').hide();
     $('#name').focusout(function() {
@@ -128,20 +126,20 @@ $(document).ready(function(){
         </li>`)
         var pizzaPrice = $("#price").html();
         pizzaOrders.push(parseInt(pizzaPrice))
-
         $('#checkOutForm').show();    
     });   
 
+    // Clears order input fields before adding another order
     $("#resetBtn").click(function(){
         $("#orderForm")[0].reset();
     });
 
+    // checkout form
     $('#checkOutForm').submit(function(e) {
         e.preventDefault();
         var deliveryOption = $("input[name='deliveryOptions']:checked").val(); 
         var totalPrice;
         var deliveryAddress;
-        // console.log(deliveryOption);
         if(deliveryOption == "true"){
             deliveryAddress = $('#location').val();
             pizzaOrders.push(100)
@@ -155,7 +153,6 @@ $(document).ready(function(){
             $("#totalAmount").text(totalPrice)
             $("#address").text("Pick Up");
         }  
-        console.log(pizzaOrders);           
     });    
 
     // Order Part
@@ -169,8 +166,6 @@ $(document).ready(function(){
             $('#finalOrder p').text("We have received your order it will be ready for pickup after 50 minutes")
         }else {
             $('#finalOrder').html(`<h2>Orders <span class="badge badge-success" id="orderNum">1</span> </h2><p class="orderMessage">We have received your order, it will be delivered to <span style ="font-weight:bold;"> ${$("#address").text()}</span> in the next 2 hours</p`)
-        }
-        
-    })
-
+        }        
+    });
 });
