@@ -1,10 +1,9 @@
 // Business Logic
-function Order(name,size,crust,toppings, delivery){
+function Order(name,size,crust,toppings){
     this.name = name;
     this.pizzaSize = size;
     this.pizzaCrust = crust;
     this.pizzaToppings = toppings;    
-    this.delivery = delivery;
     this.price = 0;
 
 }
@@ -16,15 +15,7 @@ Order.prototype.determinePrice = function(){
     });
     return this.price
 };
-Order.prototype.determinePricePlusDelivery = function(){
-    this.price += pizzaSizePrice(this.pizzaSize);
-    this.price += pizzaCrustprice(this.pizzaCrust);
-    this.pizzaToppings.forEach((topping) => {
-    	this.price += pizzaToppingsPrice(topping);
-    });
-    this.price += 100
-    return this.price
-};
+
 
 
 function pizzaSizePrice(size){
@@ -109,6 +100,8 @@ $(document).ready(function(){
         }   
     });
     
+    $('#checkOutForm').hide();
+    var pizzaOrders = [];
 
     $('#orderForm').submit(function(e){
         e.preventDefault();
@@ -116,35 +109,42 @@ $(document).ready(function(){
         var pizza = $('#pizza').val();
         var selectedCrust = $("input[name='crustType']:checked").val();
         var selectedToppings = [];
-        var deliveryOption = $("input[name='deliveryOptions']:checked").val();       
-        var deliveryAddress = $('#location').val();
-        var orders = []
 
         $.each($("input[name='topping']:checked"),function(){
             selectedToppings.push($(this).val())
         });
 
-        var newOrder = new Order(name, pizza, selectedCrust, selectedToppings, deliveryOption)
-        orders.push(newOrder)
-        orders.forEach((order) => {
-            console.log(order)
+        var order = new Order(name, pizza, selectedCrust, selectedToppings)
             $('#PizzaList').append(` <li>
             <h5>${order.name}</h5>
                     <p class="col-sm-10 m-0" >Size: <span style="font-weight:bold;">${order.pizzaSize}</span></p>
                     <p class="col-sm-10 m-0" >Crust: <span style="font-weight:bold;">${order.pizzaCrust}</span></p>
                     <p class="col-sm-10 m-0" >Toppings: <span style="font-weight:bold;">${order.pizzaToppings}</span></p>
-                    <p class="col-sm-10 m-0" >Price: <span style="font-weight:bold;">${order.determinePrice()}</span></p>                                        
-        </li>
-        `)
-        })
+                    <p class="col-sm-10 m-0" >Price: <span style="font-weight:bold;" id="price">${order.determinePrice()}</span></p>                                        
+        </li>`)
+        var pizzaPrice = $("#price").html();
+        pizzaOrders.push(parseInt(pizzaPrice))
+        // console.log(pizzaOrders)
 
-
-        // if(newOrder[deliveryOption] == true){
-        //     console.log(newOrder.determinePricePlusDelivery());
-        // }else {
-        //     newOrder.determinePrice();
-
-        // }
+        $('#checkOutForm').show();    
         
-    });
+    });   
+
+    $('#checkOutForm').submit(function(e) {
+        e.preventDefault();
+        var deliveryOption = $("input[name='deliveryOptions']:checked").val();       
+        if(deliveryOption == "true"){
+            var deliveryAddress = $('#location').val();
+            pizzaOrders.push(100)
+            console.log(`${pizzaOrders}, ${deliveryAddress}`)
+            var totalPrice = pizzaOrders.reduce((x,y) => x + y, 0)
+            console.log(totalPrice)
+        }else {
+            console.log(pizzaOrders)
+            var totalPrice = pizzaOrders.reduce((x,y) => x + y, 0)
+            console.log(totalPrice)
+        }
+
+
+    })
 });
