@@ -132,18 +132,25 @@ $(document).ready(function(){
 
     $('#checkOutForm').submit(function(e) {
         e.preventDefault();
-        var deliveryOption = $("input[name='deliveryOptions']:checked").val();       
+        var deliveryOption = $("input[name='deliveryOptions']:checked").val(); 
+        var totalPrice;
+        var deliveryAddress;
         if(deliveryOption == "true"){
-            var deliveryAddress = $('#location').val();
+            deliveryAddress = $('#location').val();
             pizzaOrders.push(100)
-            console.log(`${pizzaOrders}, ${deliveryAddress}`)
-            var totalPrice = pizzaOrders.reduce((x,y) => x + y, 0)
-            console.log(totalPrice)
+            totalPrice = pizzaOrders.reduce((x,y) => x + y, 0)
+            $("#numberOfpizzas").text(pizzaOrders.length - 1);
+            $("#totalAmount").text(totalPrice)
+            $("#address").text(deliveryAddress);            
         }else {
-            console.log(pizzaOrders)
-            var totalPrice = pizzaOrders.reduce((x,y) => x + y, 0)
-            console.log(totalPrice)
+            totalPrice = pizzaOrders.reduce((x,y) => x + y, 0)
+            $("#numberOfpizzas").text(pizzaOrders.length);
+            $("#totalAmount").text(totalPrice)
+            $("#address").text("Pick Up");
         }
+        
+
+
         // numberOfpizzas
         // totalAmount
         // address
