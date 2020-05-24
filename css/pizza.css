@@ -115,20 +115,19 @@ nav a:focus{
 }
 
 .section{
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     background-color: #f3e4ca;
 
 }
-.sectionOne{
-    margin: .5em;
-
+.sectionOne,
+.sectionTwo,
+.sectionThree{
+    margin: .5em 0;
 }
-.sectionTwo{
-    margin: .5em;
 
-}
-.sectionTwo h2{
+.sectionTwo h2,
+.sectionThree h2{
     text-align: center;
     font-weight: bold;
 }
