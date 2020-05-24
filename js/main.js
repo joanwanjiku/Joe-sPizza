@@ -127,7 +127,6 @@ $(document).ready(function(){
                     <p class="col-sm-10 m-0" >Price: <span style="font-weight:bold;">${order.determinePrice()}</span></p>                                        
         </li>`)
         pizzaOrders.push(order.price)
-        console.log(pizzaOrders)
 
         $('#checkOutForm').show();    
     });   
@@ -154,7 +153,6 @@ $(document).ready(function(){
             $("#totalAmount").text(totalPrice)
             $("#address").text("Pick Up");
         }  
-        console.log(pizzaOrders);           
     });    
 
     // Order Part
