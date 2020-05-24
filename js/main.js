@@ -21,18 +21,22 @@ Order.prototype.determinePrice = function(){
 function pizzaSizePrice(size){
     if (size == 'Big'){
   	    return 500;
-    } else if(size == 'Medium'){
+    }
+    if(size == 'Medium'){
   	    return 350;
-    } else{
+    }
+    if (size == 'Small'){
   	    return 250;
     }
 };
 function pizzaCrustprice(crust){
 	if (crust == 'glutenFree'){
   	    return 50
-    } else if(crust == 'crusty'){
+    }
+    if(crust == 'crusty'){
   	    return 35
-    } else{
+    }
+    if (crust == 'stuffed'){
   	    return 25
     }
 };
@@ -124,17 +128,20 @@ $(document).ready(function(){
         </li>`)
         var pizzaPrice = $("#price").html();
         pizzaOrders.push(parseInt(pizzaPrice))
-        // console.log(pizzaOrders)
 
         $('#checkOutForm').show();    
-        
     });   
+
+    $("#resetBtn").click(function(){
+        $("#orderForm")[0].reset();
+    });
 
     $('#checkOutForm').submit(function(e) {
         e.preventDefault();
         var deliveryOption = $("input[name='deliveryOptions']:checked").val(); 
         var totalPrice;
         var deliveryAddress;
+        // console.log(deliveryOption);
         if(deliveryOption == "true"){
             deliveryAddress = $('#location').val();
             pizzaOrders.push(100)
@@ -147,14 +154,23 @@ $(document).ready(function(){
             $("#numberOfpizzas").text(pizzaOrders.length);
             $("#totalAmount").text(totalPrice)
             $("#address").text("Pick Up");
+        }  
+        console.log(pizzaOrders);           
+    });    
+
+    // Order Part
+    $('#finalOrder').hide();
+    var orders = 0;
+    $('#confirmOrder').click(function() {
+        $('#finalOrder').show();
+        orders += 1;
+        $('#orderNum').text(orders)
+        if ($("#address").text() == "Pick Up") {
+            $('#finalOrder p').text("We have received your order it will be ready for pickup after 50 minutes")
+        }else {
+            $('#finalOrder').html(`<h2>Orders <span class="badge badge-success" id="orderNum">1</span> </h2><p>We have received your order, it will be delivered to <span> ${$("#address").text()}</span> in the next 2 hours</p`)
         }
         
-
-
-        // numberOfpizzas
-        // totalAmount
-        // address
-
-
     })
+
 });
