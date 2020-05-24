@@ -168,7 +168,7 @@ $(document).ready(function(){
         if ($("#address").text() == "Pick Up") {
             $('#finalOrder p').text("We have received your order it will be ready for pickup after 50 minutes")
         }else {
-            $('#finalOrder').html(`<h2>Orders <span class="badge badge-success" id="orderNum">1</span> </h2><p>We have received your order, it will be delivered to <span> ${$("#address").text()}</span> in the next 2 hours</p`)
+            $('#finalOrder').html(`<h2>Orders <span class="badge badge-success" id="orderNum">1</span> </h2><p class="orderMessage">We have received your order, it will be delivered to <span style ="font-weight:bold;"> ${$("#address").text()}</span> in the next 2 hours</p`)
         }
         
     })

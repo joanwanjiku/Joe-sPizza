@@ -147,9 +147,15 @@ nav a:focus{
 }
 .btn:hover{
     background: #748aaf;
+    /* background: #b5a893; */
     color: white;
 }
 #resetBtn:hover{
     background: #6d5e4e;
     color: white;
+}
+.orderMessage{
+    background:white; 
+    padding:1em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
