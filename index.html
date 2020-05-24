@@ -31,7 +31,7 @@
                <div class="col-sm-5 sectionOne">
                     <form id="orderForm">
                             <div class="form-group row mb-1">
-                                <label for="name" class="col-sm-4 col-form-label">Name</label>
+                                <label for="name" class="col-sm-4 col-form-label">Description</label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control form-control-sm" id="name" required>
                                     <small class="nameError" id="error">Name cannot be empty</small>
@@ -109,7 +109,11 @@
                             <hr>                    
                             <div class="form-group row">
                                 <div class="col-sm-8 offset-sm-4">
+                                    <small class="sup" style="font-size: .75rem; margin-left: .5em;">Big:-Shs.500, Medium:-Shs.350, Small:-Shs.250</small>
+
                                     <button type="submit" class="btn px-4" id = "orderBtn">Add</button>
+                                    <input type="button" class="btn px-4" value="Reset" id="resetBtn"/>
+
                                 </div>
                             </div>                 
                         </form>
@@ -152,7 +156,7 @@
                                 </fieldset>  
                                 <div class="form-group row">
                                     <div class="col-sm-8 offset-sm-4">
-                                        <!-- Button trigger modal -->
+                                        <!-- Button trigger Checkout modal -->
                                         <button type="submit" class="btn px-4" id = "chkoutBtn" data-toggle="modal" data-target="#staticBackdrop">Checkout</button>
                                     </div>
                                 </div>  
