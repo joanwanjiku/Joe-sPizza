@@ -16,6 +16,8 @@ Order.prototype.determinePrice = function(){
     return this.price
 };
 
+
+
 function pizzaSizePrice(size){
     if (size == 'Big'){
   	    return 500;
@@ -27,7 +29,6 @@ function pizzaSizePrice(size){
   	    return 250;
     }
 };
-
 function pizzaCrustprice(crust){
 	if (crust == 'glutenFree'){
   	    return 50
@@ -57,7 +58,8 @@ function pizzaToppingsPrice(topping){
 
 $(document).ready(function(){
     // UI Logic
-    // Description and Size validations
+    // Validations
+    // Name and Size validations
     $('.sizeError').hide();
     $('.nameError').hide();
     $('#name').focusout(function() {
@@ -122,19 +124,18 @@ $(document).ready(function(){
                     <p class="col-sm-10 m-0" >Size: <span style="font-weight:bold;">${order.pizzaSize}</span></p>
                     <p class="col-sm-10 m-0" >Crust: <span style="font-weight:bold;">${order.pizzaCrust}</span></p>
                     <p class="col-sm-10 m-0" >Toppings: <span style="font-weight:bold;">${order.pizzaToppings}</span></p>
-                    <p class="col-sm-10 m-0" >Price: <span style="font-weight:bold;" id="price">${order.determinePrice()}</span></p>                                        
+                    <p class="col-sm-10 m-0" >Price: <span style="font-weight:bold;">${order.determinePrice()}</span></p>                                        
         </li>`)
-        var pizzaPrice = $("#price").html();
-        pizzaOrders.push(parseInt(pizzaPrice))
+        pizzaOrders.push(order.price)
+        console.log(pizzaOrders)
+
         $('#checkOutForm').show();    
     });   
 
-    // Clears order input fields before adding another order
     $("#resetBtn").click(function(){
         $("#orderForm")[0].reset();
     });
 
-    // checkout form
     $('#checkOutForm').submit(function(e) {
         e.preventDefault();
         var deliveryOption = $("input[name='deliveryOptions']:checked").val(); 
@@ -153,6 +154,7 @@ $(document).ready(function(){
             $("#totalAmount").text(totalPrice)
             $("#address").text("Pick Up");
         }  
+        console.log(pizzaOrders);           
     });    
 
     // Order Part
@@ -166,6 +168,8 @@ $(document).ready(function(){
             $('#finalOrder p').text("We have received your order it will be ready for pickup after 50 minutes")
         }else {
             $('#finalOrder').html(`<h2>Orders <span class="badge badge-success" id="orderNum">1</span> </h2><p class="orderMessage">We have received your order, it will be delivered to <span style ="font-weight:bold;"> ${$("#address").text()}</span> in the next 2 hours</p`)
-        }        
-    });
+        }
+        
+    })
+
 });
