@@ -145,4 +145,11 @@ nav a:focus{
     font-size: .75rem;
     background: rgba(253, 54, 54, 0.286); 
 }
-
+.btn:hover{
+    background: #748aaf;
+    color: white;
+}
+#resetBtn:hover{
+    background: #6d5e4e;
+    color: white;
+}
